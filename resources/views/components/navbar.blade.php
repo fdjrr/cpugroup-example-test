@@ -1,4 +1,4 @@
-<nav class="border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+<nav class="relative z-50 border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
     <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <a class="flex items-center space-x-3 rtl:space-x-reverse" href="{{ route('home') }}" wire:navigate>
             <img class="h-8" src="{{ asset('assets/img/logo-gt-dark.png') }}" alt="Flowbite Logo" />
