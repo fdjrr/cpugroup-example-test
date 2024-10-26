@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Storage;
 
-class Category extends Model
+class Post extends Model
 {
-    protected $table = 'categories';
+    protected $table = 'posts';
     protected $guarded = ['id'];
 
     public function getImageUrlAttribute()
@@ -22,18 +22,19 @@ class Category extends Model
 
         $query->when($search, function ($query, $search) {
             $query->where(function ($query) use ($search) {
-                $query->whereLike('name', "%$search%");
+                $query
+                    ->whereLike('title', "%$search%");
             });
         });
     }
 
     /**
-     * Get all of the products for the Category
+     * Get the user that owns the Post
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function products(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->hasMany(Product::class, 'category_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

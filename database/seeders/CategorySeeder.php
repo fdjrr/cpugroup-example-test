@@ -14,10 +14,10 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Aki', 'description' => 'Aki'],
-            ['name' => 'Ban', 'description' => 'Ban'],
-            ['name' => 'Spareparts', 'description' => 'Spareparts'],
-            ['name' => 'Oli', 'description' => 'Oli'],
+            ['image' => 'storage/categories/default.png', 'name' => 'Aki', 'description' => 'Aki'],
+            ['image' => 'storage/categories/default.png', 'name' => 'Ban', 'description' => 'Ban'],
+            ['image' => 'storage/categories/default.png', 'name' => 'Spareparts', 'description' => 'Spareparts'],
+            ['image' => 'storage/categories/default.png', 'name' => 'Oli', 'description' => 'Oli'],
         ];
 
         Category::insert($categories);

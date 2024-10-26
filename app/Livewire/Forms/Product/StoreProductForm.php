@@ -8,6 +8,8 @@ use Livewire\Form;
 
 class StoreProductForm extends Form
 {
+    public $image;
+
     #[Validate('required|unique:products,name', as: 'Nama Produk')]
     public $name;
 
@@ -27,11 +29,12 @@ class StoreProductForm extends Form
 
     public $description;
 
-    public function store()
+    public function store($image)
     {
         $this->validate();
 
         $product = Product::create([
+            'image'       => $image->store('products', 'public'),
             'name'        => $this->name,
             'category_id' => $this->category_id,
             'supplier_id' => $this->supplier_id,

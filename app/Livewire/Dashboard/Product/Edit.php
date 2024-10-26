@@ -8,12 +8,28 @@ use App\Models\Product;
 use App\Models\Supplier;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 #[Layout('layouts.dashboard-layout')]
 class Edit extends Component
 {
+    use WithFileUploads;
+
     public UpdateProductForm $form;
     public Product $product;
+
+    public $image;
+
+    public $isUploaded = false;
+
+    public function updatedImage()
+    {
+        $this->validate([
+            'image' => 'image|max:2048',
+        ]);
+
+        $this->isUploaded = true;
+    }
 
     public function mount(Product $product)
     {
@@ -23,7 +39,7 @@ class Edit extends Component
 
     public function save()
     {
-        $this->form->update($this->product);
+        $this->form->update($this->product, $this->image);
 
         return $this->redirectRoute('products.edit', $this->product->id);
     }

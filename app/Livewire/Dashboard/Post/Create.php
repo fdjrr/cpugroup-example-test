@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Livewire\Dashboard\Product;
+namespace App\Livewire\Dashboard\Post;
 
-use App\Livewire\Forms\Product\StoreProductForm;
-use App\Models\Category;
-use App\Models\Product;
-use App\Models\Supplier;
+use App\Livewire\Forms\Post\StorePostForm;
+use App\Models\Post;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -15,11 +13,9 @@ class Create extends Component
 {
     use WithFileUploads;
 
-    public StoreProductForm $form;
+    public StorePostForm $form;
 
     public $image;
-
-    public $isUploaded = false;
 
     public function updatedImage()
     {
@@ -30,31 +26,31 @@ class Create extends Component
         $this->isUploaded = true;
     }
 
+    public $isUploaded = false;
+
     public function save()
     {
         $this->validate([
             'image' => 'required',
         ], attributes: [
-            'image' => 'Gambar Produk',
+            'image' => 'Gambar',
         ]);
 
-        $product = $this->form->store($this->image);
+        $post = $this->form->store($this->image);
 
-        return $this->redirectRoute('products.edit', $product->id);
+        return $this->redirectRoute('posts.edit', $post->id);
     }
 
     public function render()
     {
-        return view('livewire.dashboard.product.form', [
-            'page_meta'  => [
-                'title' => 'Create Product',
+        return view('livewire.dashboard.post.form', [
+            'page_meta' => [
+                'title' => 'Create Post',
                 'form'  => [
                     'action' => 'save',
                 ],
             ],
-            'product'    => new Product(),
-            'categories' => Category::all(),
-            'suppliers'  => Supplier::all(),
+            'post'      => new Post(),
         ]);
     }
 }

@@ -8,6 +8,8 @@ use Livewire\Form;
 
 class UpdateProductForm extends Form
 {
+    public $image;
+
     public $name;
 
     public $category_id;
@@ -24,7 +26,7 @@ class UpdateProductForm extends Form
 
     public $description;
 
-    public function update(Product $product)
+    public function update(Product $product, $image)
     {
         $this->validate([
             'name'        => "required|unique:products,name,{$product->id}",
@@ -41,6 +43,7 @@ class UpdateProductForm extends Form
         ]);
 
         $product->update([
+            'image'       => $image ? $image->store('products', 'public') : $product->image,
             'name'        => $this->name,
             'category_id' => $this->category_id,
             'supplier_id' => $this->supplier_id,

@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Livewire\Home::class)->name('home');
 Route::get('/about', \App\Livewire\About::class)->name('about');
-Route::get('/news', \App\Livewire\News::class)->name('news');
+Route::prefix('posts')->group(function () {
+    Route::get('', \App\Livewire\Post\Index::class)->name('home.posts.index');
+    Route::get('{post:slug}', \App\Livewire\Post\Show::class)->name('home.posts.show');
+});
 Route::get('/products', \App\Livewire\Products::class)->name('products');
 Route::get('/branches', \App\Livewire\Branches::class)->name('branches');
 Route::get('/contact', \App\Livewire\Contact::class)->name('contact');
@@ -49,10 +52,10 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{branch}/edit', \App\Livewire\Dashboard\Branch\Edit::class)->name('branches.edit');
         });
 
-        Route::prefix('news')->group(function () {
-            Route::get('', \App\Livewire\Dashboard\News\Index::class)->name('news.index');
-            Route::get('create', \App\Livewire\Dashboard\News\Create::class)->name('news.create');
-            Route::get('{new}/edit', \App\Livewire\Dashboard\News\Edit::class)->name('news.edit');
+        Route::prefix('posts')->group(function () {
+            Route::get('', \App\Livewire\Dashboard\Post\Index::class)->name('posts.index');
+            Route::get('create', \App\Livewire\Dashboard\Post\Create::class)->name('posts.create');
+            Route::get('{post}/edit', \App\Livewire\Dashboard\Post\Edit::class)->name('posts.edit');
         });
 
         Route::prefix('guest-books')->group(function () {

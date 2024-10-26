@@ -5,38 +5,47 @@
             @if ($image && $isUploaded)
                 <img class="mb-3 w-[300px]" src="{{ $image->temporaryUrl() }}" alt="">
             @else
-                @if ($category->id)
-                    <img class="mb-3 w-[300px]" src="{{ asset($category->image_url) }}" alt="{{ $category->image }}">
+                @if ($post->id)
+                    <img class="mb-3 w-[300px]" src="{{ asset($post->image_url) }}" alt="{{ $post->image }}">
                 @endif
             @endif
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Gambar Kategori</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Gambar</label>
                 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
-                    id="image" type="file" wire:model="image" placeholder="Gambar Kategori" />
+                    id="image" type="file" wire:model="image" placeholder="Gambar" />
                 @error('image')
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Nama Kategori</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="title">Judul</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                    id="name" type="text" wire:model="form.name" placeholder="Nama Kategori" />
-                @error('form.name')
+                    id="title" type="text" wire:model="form.title" placeholder="Judul" />
+                @error('form.title')
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="description">Deskripsi Kategori</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="content">Content</label>
                 <textarea
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                    id="message" rows="4" wire:model="form.description" placeholder="Deskripsi Kategori"></textarea>
-                @error('form.description')
+                    id="message" rows="4" wire:model="form.content" placeholder="Content"></textarea>
+                @error('form.content')
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
                 @enderror
             </div>
+            <div class="mb-3">
+                <label class="inline-flex items-center cursor-pointer">
+                    <input class="sr-only peer" type="checkbox" wire:model="form.is_published" @checked($post->is_published)>
+                    <div
+                        class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800">
+                    </div>
+                    <span class="text-sm font-medium text-gray-900 ms-3 dark:text-gray-300">Publish</span>
+                </label>
+            </div>
             <div class="flex justify-end gap-2">
-                <a class="w-auto rounded-lg border bg-white px-5 py-2.5 text-center text-sm font-medium" href="{{ route('categories.index') }}" wire:navigate>Cancel</a>
+                <a class="w-auto rounded-lg border bg-white px-5 py-2.5 text-center text-sm font-medium" href="{{ route('posts.index') }}" wire:navigate>Cancel</a>
                 <button
                     class="w-auto rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     type="submit">Submit</button>

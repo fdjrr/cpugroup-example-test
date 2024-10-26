@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Livewire\Dashboard\Category;
+namespace App\Livewire\Dashboard\Post;
 
-use App\Livewire\Forms\Category\UpdateCategoryForm;
-use App\Models\Category;
+use App\Livewire\Forms\Post\UpdatePostForm;
+use App\Models\Post;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -13,8 +13,10 @@ class Edit extends Component
 {
     use WithFileUploads;
 
+    public Post $post;
+    public UpdatePostForm $form;
+
     public $image;
-    public $isUploaded = false;
 
     public function updatedImage()
     {
@@ -25,27 +27,26 @@ class Edit extends Component
         $this->isUploaded = true;
     }
 
-    public Category $category;
-    public UpdateCategoryForm $form;
+    public $isUploaded = false;
 
-    public function mount(Category $category)
+    public function mount(Post $post)
     {
-        $this->category = $category;
-        $this->form->fill($category);
+        $this->post = $post;
+        $this->form->fill($post);
     }
 
     public function save()
     {
-        $category = $this->form->update($this->category, $this->image);
+        $post = $this->form->update($this->post, $this->image);
 
-        return $this->redirectRoute('categories.edit', $category->id);
+        return $this->redirectRoute('posts.edit', $post->id);
     }
 
     public function render()
     {
-        return view('livewire.dashboard.category.form', [
+        return view('livewire.dashboard.post.form', [
             'page_meta' => [
-                'title' => 'Edit Category',
+                'title' => 'Edit Post',
                 'form'  => [
                     'action' => 'save',
                 ],
