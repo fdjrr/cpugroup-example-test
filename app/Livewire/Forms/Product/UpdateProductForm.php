@@ -34,12 +34,14 @@ class UpdateProductForm extends Form
             'supplier_id' => 'required|exists:suppliers,id',
             'sku'         => "required|unique:products,sku,{$product->id}",
             'price'       => 'required',
+            'description' => 'required',
         ], attributes: [
             'name'        => 'Nama Produk',
             'category_id' => 'Kategori',
             'supplier_id' => 'Supplier',
             'sku'         => 'SKU Produk',
             'price'       => 'Harga Produk',
+            'description' => 'Deskripsi Produk',
         ]);
 
         $product->update([

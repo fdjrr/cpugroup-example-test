@@ -59,8 +59,8 @@ class Create extends Component
                 ],
             ],
             'product'    => new Product(),
-            'categories' => Category::all(),
-            'suppliers'  => Supplier::all(),
+            'categories' => Category::query()->orderBy('name')->get(),
+            'suppliers'  => Supplier::query()->orderBy('name')->get(),
         ]);
     }
 }

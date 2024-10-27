@@ -7,7 +7,7 @@
     <div class="mx-auto rounded border bg-white p-4 shadow sm:w-[750px]">
         <form wire:submit.prevent="{{ $page_meta['form']['action'] }}">
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Nama</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name"><span class="text-red-500 me-1">*</span>Nama</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="name" type="text" wire:model="form.name" placeholder="Nama" />
@@ -16,7 +16,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email">Email</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email"><span class="text-red-500 me-1">*</span>Email</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="email" type="email" wire:model="form.email" placeholder="Email" />
@@ -25,7 +25,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="phone">HP / Telp</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="phone"><span class="text-red-500 me-1">*</span>HP / Telp</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="phone" type="text" wire:model="form.phone" placeholder="HP / Telp" />
@@ -34,7 +34,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="subject">Subject</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="subject"><span class="text-red-500 me-1">*</span>Subject</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="subject" type="text" wire:model="form.subject" placeholder="Subject" />
@@ -43,7 +43,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="message">Pesan</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="message"><span class="text-red-500 me-1">*</span>Pesan</label>
                 <textarea
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="message" rows="4" wire:model="form.message" placeholder="Pesan"></textarea>

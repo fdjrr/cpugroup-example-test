@@ -6,7 +6,7 @@
     <div class="rounded border bg-white p-4 shadow">
         <form wire:submit.prevent="{{ $page_meta['form']['action'] }}">
             <div class="mb-3">
-                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="transaction_date">Tanggal Transaksi</label>
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="transaction_date"><span class="text-red-500 me-1">*</span>Tanggal Transaksi</label>
                 <div class="relative" wire:ignore>
                     <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
                         <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -24,7 +24,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="product_id">Produk</label>
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="product_id"><span class="text-red-500 me-1">*</span>Produk</label>
                 <select
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="product_id" wire:model="form.product_id" wire:change="selectProduct">
@@ -39,7 +39,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="quantity">Jumlah Produk</label>
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="quantity"><span class="text-red-500 me-1">*</span>Jumlah Produk</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="quantity" type="number" wire:model="form.quantity" placeholder="Jumlah Produk" />
@@ -48,7 +48,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="price">Harga Produk</label>
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="price"><span class="text-red-500 me-1">*</span>Harga Produk</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="price" type="number" wire:model="form.price" placeholder="Harga Produk" />
@@ -57,7 +57,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="description">Tipe Transaksi</label>
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="description"><span class="text-red-500 me-1">*</span>Tipe Transaksi</label>
                 <div class="grid gap-6 md:grid-cols-2">
                     <div class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700">
                         <input class="h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600" id="bordered-radio-1"
@@ -75,7 +75,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="description">Catatan</label>
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="description"><span class="text-red-500 me-1">*</span>Catatan</label>
                 <textarea
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="message" rows="4" wire:model="form.description" placeholder="Catatan"></textarea>

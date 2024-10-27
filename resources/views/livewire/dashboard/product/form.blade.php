@@ -13,7 +13,7 @@
                 @endif
             @endif
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Gambar Produk</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image"><span class="text-red-500 me-1">*</span>Gambar Produk</label>
                 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
                     id="image" type="file" wire:model="image" placeholder="Gambar Produk" />
                 @error('image')
@@ -21,7 +21,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Nama Produk</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name"><span class="text-red-500 me-1">*</span>Nama Produk</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="name" type="text" wire:model="form.name" placeholder="Nama Produk" />
@@ -30,7 +30,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="category_id">Kategori</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="category_id"><span class="text-red-500 me-1">*</span>Kategori</label>
                 <select
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="category_id" wire:model="form.category_id">
@@ -45,7 +45,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="supplier_id">Supplier</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="supplier_id"><span class="text-red-500 me-1">*</span>Supplier</label>
                 <select
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="supplier_id" wire:model="form.supplier_id">
@@ -60,7 +60,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="sku">SKU Produk</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="sku"><span class="text-red-500 me-1">*</span>SKU Produk</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="sku" type="text" wire:model="form.sku" placeholder="SKU Produk" />
@@ -77,7 +77,7 @@
                 </div>
             @endif
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="price">Harga Produk</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="price"><span class="text-red-500 me-1">*</span>Harga Produk</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="price" type="number" wire:model="form.price" placeholder="Harga Produk" />
@@ -86,7 +86,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="description">Deskripsi Produk</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="description"><span class="text-red-500 me-1">*</span>Deskripsi Produk</label>
                 <textarea
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="message" rows="4" wire:model="form.description" placeholder="Deskripsi Produk"></textarea>

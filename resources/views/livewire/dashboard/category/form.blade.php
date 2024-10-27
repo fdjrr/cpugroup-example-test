@@ -13,7 +13,7 @@
                 @endif
             @endif
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Gambar Kategori</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image"><span class="text-red-500 me-1">*</span>Gambar Kategori</label>
                 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
                     id="image" type="file" wire:model="image" placeholder="Gambar Kategori" />
                 @error('image')
@@ -21,7 +21,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Nama Kategori</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name"><span class="text-red-500 me-1">*</span>Nama Kategori</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="name" type="text" wire:model="form.name" placeholder="Nama Kategori" />
@@ -30,7 +30,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="description">Deskripsi Kategori</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="description"><span class="text-red-500 me-1">*</span>Deskripsi Kategori</label>
                 <textarea
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="message" rows="4" wire:model="form.description" placeholder="Deskripsi Kategori"></textarea>

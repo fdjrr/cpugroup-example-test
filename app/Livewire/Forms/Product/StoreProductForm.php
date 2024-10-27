@@ -27,6 +27,7 @@ class StoreProductForm extends Form
     #[Validate('required|numeric', as: 'Harga Produk')]
     public $price;
 
+    #[Validate('required', as: 'Deskripsi Produk')]
     public $description;
 
     public function store($image)

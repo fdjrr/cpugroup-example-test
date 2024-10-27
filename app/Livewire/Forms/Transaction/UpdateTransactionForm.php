@@ -32,6 +32,7 @@ class UpdateTransactionForm extends Form
     #[Validate('required|date', as: 'Tanggal Transaksi')]
     public $transaction_date;
 
+    #[Validate('required', as: 'Catatan')]
     public $description;
 
     public function update(Transaction $transaction)
@@ -44,22 +45,24 @@ class UpdateTransactionForm extends Form
             $product = Product::find($this->product_id);
             if ($product) {
                 if ($this->transaction_type === "Out") {
-                    $quantity = ($product->quantity + $transaction->quantity) - $this->quantity;
-
-                    if ($quantity < 0) {
-                        throw new Exception('Stok produk tidak mencukupi');
+                    if ($transaction->transaction_type == "In") {
+                        // 
                     } else {
-                        $product->update([
-                            'quantity' => $quantity,
-                        ]);
+                        $quantity = $product->quantity - $this->quantity;
                     }
                 }
 
                 if ($this->transaction_type === "In") {
-                    $product->update([
-                        'quantity' => ($product->quantity - $transaction->quantity) + $this->quantity,
-                    ]);
+                    if ($transaction->transaction_type == "Out") {
+                        // 
+                    } else {
+                        $quantity = ($product->quantity - $transaction->quantity) + $this->quantity;
+                    }
                 }
+
+                $product->update([
+                    'quantity' => $quantity,
+                ]);
             }
 
             $transaction->update([

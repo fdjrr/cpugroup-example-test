@@ -13,7 +13,7 @@
                 @endif
             @endif
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Gambar</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image"><span class="text-red-500 me-1">*</span>Gambar</label>
                 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
                     id="image" type="file" wire:model="image" placeholder="Gambar" />
                 @error('image')
@@ -21,7 +21,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Nama Cabang / Depo</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name"><span class="text-red-500 me-1">*</span>Nama Cabang / Depo</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="name" type="text" wire:model="form.name" placeholder="Nama Cabang / Depo" />
@@ -30,7 +30,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="region">Wilayah</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="region"><span class="text-red-500 me-1">*</span>Wilayah</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="region" type="text" wire:model="form.region" placeholder="Wilayah" />
@@ -40,7 +40,7 @@
             </div>
             <div class="grid grid-cols-1 gap-3 mb-3 md:grid-cols-3">
                 <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="phone">Telepon</label>
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="phone"><span class="text-red-500 me-1">*</span>Telepon</label>
                     <input
                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                         id="phone" type="text" wire:model="form.phone" placeholder="Telepon" />
@@ -49,7 +49,7 @@
                     @enderror
                 </div>
                 <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="fax">Fax</label>
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="fax"><span class="text-red-500 me-1">*</span>Fax</label>
                     <input
                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                         id="fax" type="text" wire:model="form.fax" placeholder="Fax" />
@@ -58,7 +58,7 @@
                     @enderror
                 </div>
                 <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email">Email</label>
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email"><span class="text-red-500 me-1">*</span>Email</label>
                     <input
                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                         id="email" type="email" wire:model="form.email" placeholder="Email" />
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="address">Alamat</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="address"><span class="text-red-500 me-1">*</span>Alamat</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="address" type="text" wire:model="form.address" placeholder="Alamat" />
@@ -77,7 +77,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="gmaps_link">Google Maps</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="gmaps_link"><span class="text-red-500 me-1">*</span>Google Maps</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="gmaps_link" type="text" wire:model="form.gmaps_link" placeholder="Google Maps" />

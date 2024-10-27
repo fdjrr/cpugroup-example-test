@@ -29,6 +29,7 @@ class StoreTransactionForm extends Form
     #[Validate('required|date', as: 'Tanggal Transaksi')]
     public $transaction_date;
 
+    #[Validate('required', as: 'Catatan')]
     public $description;
 
     public function store()

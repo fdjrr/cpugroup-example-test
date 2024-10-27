@@ -6,7 +6,7 @@
     <div class="p-4 bg-white border rounded shadow">
         <form wire:submit.prevent="{{ $page_meta['form']['action'] }}">
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Nama Supplier</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name"><span class="text-red-500 me-1">*</span>Nama Supplier</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="name" type="text" wire:model="form.name" placeholder="Nama Supplier" />
@@ -15,7 +15,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="contact_info">Kontak Info</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="contact_info"><span class="text-red-500 me-1">*</span>Kontak Info</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="contact_info" type="text" wire:model="form.contact_info" placeholder="Kontak Info" />
@@ -24,7 +24,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="contact_info">Alamat</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="contact_info"><span class="text-red-500 me-1">*</span>Alamat</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     id="address" type="text" wire:model="form.address" placeholder="Alamat" />

@@ -59,8 +59,8 @@ class Edit extends Component
                     'action' => 'save',
                 ],
             ],
-            'categories' => Category::all(),
-            'suppliers'  => Supplier::all(),
+            'categories' => Category::query()->orderBy('name')->get(),
+            'suppliers'  => Supplier::query()->orderBy('name')->get(),
         ]);
     }
 }
