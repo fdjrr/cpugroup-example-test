@@ -39,7 +39,7 @@ class UpdateTransactionForm extends Form
     {
         $this->validate();
 
-        if ($this->quantity < 0) {
+        if ($this->quantity <= 0) {
             throw new Exception('Jumlah produk tidak boleh kurang dari 0');
         }
 
