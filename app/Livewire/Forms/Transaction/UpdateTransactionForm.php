@@ -52,15 +52,15 @@ class UpdateTransactionForm extends Form
                     if ($transaction->transaction_type == "In") {
                         $quantity = ($product->quantity - $transaction->quantity) - $this->quantity;
                     } else {
-                        $quantity = ($product->quantity - $transaction->quantity) + $this->quantity;
+                        $quantity = ($product->quantity + $transaction->quantity) - $this->quantity;
                     }
                 }
-
+                
                 if ($this->transaction_type === "In") {
                     if ($transaction->transaction_type == "Out") {
                         $quantity = ($product->quantity + $transaction->quantity) + $this->quantity;
                     } else {
-                        $quantity = ($product->quantity + $transaction->quantity) - $this->quantity;
+                        $quantity = ($product->quantity - $transaction->quantity) + $this->quantity;
                     }
                 }
 
