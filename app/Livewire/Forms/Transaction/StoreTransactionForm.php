@@ -36,6 +36,10 @@ class StoreTransactionForm extends Form
     {
         $this->validate();
 
+        if ($this->quantity < 0) {
+            throw new Exception('Jumlah produk tidak boleh kurang dari 0');
+        }
+
         DB::beginTransaction();
 
         try {
@@ -53,7 +57,7 @@ class StoreTransactionForm extends Form
             $product = Product::find($this->product_id);
             if ($product) {
                 if ($transaction->transaction_type === "Out") {
-                    if ($product->quantity <= 0 || $product->quantity < $this->quantity) {
+                    if ($product->quantity < $this->quantity) {
                         throw new Exception('Stok produk tidak mencukupi');
                     } else {
                         $product->update([

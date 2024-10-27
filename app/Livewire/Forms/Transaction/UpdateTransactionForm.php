@@ -39,6 +39,10 @@ class UpdateTransactionForm extends Form
     {
         $this->validate();
 
+        if ($this->quantity < 0) {
+            throw new Exception('Jumlah produk tidak boleh kurang dari 0');
+        }
+
         DB::beginTransaction();
 
         try {
@@ -46,18 +50,22 @@ class UpdateTransactionForm extends Form
             if ($product) {
                 if ($this->transaction_type === "Out") {
                     if ($transaction->transaction_type == "In") {
-                        // 
+                        $quantity = ($product->quantity - $transaction->quantity) - $this->quantity;
                     } else {
-                        $quantity = $product->quantity - $this->quantity;
+                        $quantity = ($product->quantity - $transaction->quantity) + $this->quantity;
                     }
                 }
 
                 if ($this->transaction_type === "In") {
                     if ($transaction->transaction_type == "Out") {
-                        // 
+                        $quantity = ($product->quantity + $transaction->quantity) + $this->quantity;
                     } else {
-                        $quantity = ($product->quantity - $transaction->quantity) + $this->quantity;
+                        $quantity = ($product->quantity + $transaction->quantity) - $this->quantity;
                     }
+                }
+
+                if ($quantity < 0) {
+                    throw new Exception('Stok produk tidak mencukupi');
                 }
 
                 $product->update([
