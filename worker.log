@@ -1,0 +1,64 @@
+  Failed to listen on 127.0.0.1:8081 (reason: Address already in use)
+  Failed to listen on 127.0.0.1:8081 (reason: Address already in use)
+  Failed to listen on 127.0.0.1:8081 (reason: Address already in use)
+  Failed to listen on 127.0.0.1:8081 (reason: Address already in use)
+
+   INFO  Server running on [http://127.0.0.1:8082].  
+
+  Press Ctrl+C to stop the server
+
+  2024-10-27 20:34:30 / .......................................... ~ 512.91ms
+  2024-10-27 20:34:49 / ............................................ ~ 0.16ms
+  2024-10-27 20:34:49 /build/assets/app-DK14cjTH.css ............... ~ 0.03ms
+  2024-10-27 20:34:49 /build/assets/app-BBktgrxe.js ................ ~ 0.03ms
+  2024-10-27 20:34:49 /assets/img/capella-lazada.jpg ............... ~ 0.06ms
+  2024-10-27 20:34:49 /assets/img/slider2.webp ..................... ~ 0.22ms
+  2024-10-27 20:34:49 /assets/img/slider1.webp ..................... ~ 0.20ms
+  2024-10-27 20:34:49 /storage/categories/NJ1IbMj5pEd6f2EoxGELbCy43qWuXYptbCTr4juK.webp  ~ 0.37ms
+  2024-10-27 20:34:49 /assets/img/logo-gt-dark.png ................. ~ 0.06ms
+  2024-10-27 20:34:49 /assets/img/capella-tokopedia.jpg ............ ~ 0.17ms
+  2024-10-27 20:34:49 /assets/img/partner.webp ..................... ~ 0.05ms
+  2024-10-27 20:34:49 /assets/img/partner1.webp .................... ~ 0.03ms
+  2024-10-27 20:34:49 /assets/img/capella-blibli.jpg ............... ~ 0.02ms
+  2024-10-27 20:34:49 /livewire/livewire.js ........................ ~ 0.93ms
+  2024-10-27 20:34:49 /assets/img/slider3.webp ..................... ~ 0.23ms
+  2024-10-27 20:34:49 /storage/storage/categories/default.png ...... ~ 0.99ms
+  2024-10-27 20:34:49 /favicon.ico ................................. ~ 0.08ms
+  2024-10-27 20:34:53 /about ....................................... ~ 0.08ms
+  2024-10-27 20:35:01 /products .................................... ~ 0.08ms
+  2024-10-27 20:35:02 /storage/products/s4sboO0Mngg7U6qlqn0wJv7jcUHMHz9QYKCn6peW.jpg  ~ 0.09ms
+  2024-10-27 20:35:04 /livewire/update ............................. ~ 0.08ms
+  2024-10-27 20:35:07 /livewire/update ............................. ~ 0.10ms
+  2024-10-27 20:35:14 /livewire/update ............................. ~ 0.08ms
+  2024-10-27 20:35:15 /livewire/update ............................. ~ 0.11ms
+  2024-10-27 20:35:15 /livewire/update ............................. ~ 0.18ms
+  2024-10-27 20:35:19 / ............................................ ~ 0.08ms
+  2024-10-27 20:35:19 /storage/storage/categories/default.png ...... ~ 0.08ms
+  2024-10-27 20:35:27 /dashboard ................................... ~ 0.08ms
+  2024-10-27 20:35:27 /auth/login .................................. ~ 0.11ms
+  2024-10-27 20:35:36 /livewire/update ........................... ~ 500.62ms
+  2024-10-27 20:35:37 /dashboard ................................... ~ 0.09ms
+  2024-10-27 20:35:37 /livewire/update ............................. ~ 0.08ms
+  2024-10-27 20:35:46 /dashboard ................................... ~ 0.09ms
+  2024-10-27 20:35:51 /dashboard/transactions ...................... ~ 0.08ms
+  2024-10-27 20:35:54 /dashboard ................................... ~ 0.08ms
+  2024-10-27 20:35:54 /auth/login .................................. ~ 0.03ms
+  2024-10-27 20:35:56 /auth/login .................................. ~ 0.09ms
+  2024-10-27 20:36:04 /livewire/update ............................. ~ 0.10ms
+  2024-10-27 20:36:04 /dashboard ................................... ~ 0.08ms
+  2024-10-27 20:36:09 /dashboard/transactions ...................... ~ 0.10ms
+  2024-10-27 20:36:11 /dashboard/transactions/4/edit ............... ~ 0.10ms
+  2024-10-27 20:36:15 /dashboard/categories ........................ ~ 0.16ms
+  2024-10-27 20:36:17 /dashboard/categories/2/edit ................. ~ 0.09ms
+  2024-10-27 20:36:17 /storage/storage/categories/default.png ...... ~ 0.02ms
+  2024-10-27 20:36:18 /dashboard/categories ........................ ~ 0.08ms
+  2024-10-27 20:36:20 /dashboard/categories/create ................. ~ 0.09ms
+  2024-10-27 20:36:29 /dashboard/categories ........................ ~ 0.09ms
+  2024-10-27 20:36:31 /dashboard ................................... ~ 0.08ms
+  2024-10-27 20:36:33 /dashboard ................................... ~ 0.11ms
+  2024-10-27 20:36:35 /dashboard/transactions ...................... ~ 0.08ms
+  2024-10-27 20:36:37 /dashboard/transactions/create ............... ~ 0.08ms
+  2024-10-27 20:36:41 /livewire/update ........................... ~ 516.60ms
+  2024-10-27 20:36:47 /dashboard/branches .......................... ~ 0.08ms
+  2024-10-27 20:36:51 /livewire/update ........................... ~ 505.99ms
+  2024-10-27 20:36:51 /auth/login .................................. ~ 0.05ms
