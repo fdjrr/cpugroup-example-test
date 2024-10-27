@@ -3,6 +3,7 @@
 namespace App\Livewire\Dashboard\Supplier;
 
 use App\Livewire\Forms\Supplier\StoreSupplierForm;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -14,6 +15,11 @@ class Create extends Component
     public function save()
     {
         $supplier = $this->form->store();
+
+        Session::flash('flash', [
+            'type'    => 'success',
+            'message' => 'Supplier created',
+        ]);
 
         return $this->redirectRoute('suppliers.edit', $supplier->id);
     }

@@ -17,7 +17,7 @@ class Login extends Component
         $user = $this->form->verify();
 
         if ($user) {
-            Auth::login($user);
+            Auth::login($user, $this->form->remember_me);
 
             return $this->redirectRoute('dashboard');
         } else {

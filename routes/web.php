@@ -8,8 +8,12 @@ Route::prefix('posts')->group(function () {
     Route::get('', \App\Livewire\Post\Index::class)->name('home.posts.index');
     Route::get('{post:slug}', \App\Livewire\Post\Show::class)->name('home.posts.show');
 });
-Route::get('/products', \App\Livewire\Products::class)->name('products');
-Route::get('/branches', \App\Livewire\Branches::class)->name('branches');
+Route::prefix('products')->group(function () {
+    Route::get('', \App\Livewire\Product\Index::class)->name('home.products.index');
+});
+Route::prefix('branches')->group(function () {
+    Route::get('', \App\Livewire\Branch\Index::class)->name('home.branches.index');
+});
 Route::get('/contact', \App\Livewire\Contact::class)->name('contact');
 
 Route::middleware(['guest'])->group(function () {

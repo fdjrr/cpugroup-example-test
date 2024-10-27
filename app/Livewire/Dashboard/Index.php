@@ -10,6 +10,10 @@ class Index extends Component
 {
     public function render()
     {
-        return view('livewire.dashboard.index');
+        return view('livewire.dashboard.index', [
+            'page_meta' => [
+                'title' => 'Dashboard',
+            ],
+        ]);
     }
 }

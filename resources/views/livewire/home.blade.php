@@ -29,7 +29,7 @@
         <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-center text-gray-900 dark:text-white">Produk Kami</h1>
         <div class="grid grid-cols-4 gap-2 px-10">
             @forelse ($categories as $category)
-                <a href="{{ route('products', ['category_id' => $category->id]) }}">
+                <a href="{{ route('home.products.index', ['category_id' => $category->id]) }}">
                     <img class="w-full border rounded hover:shadow" src="{{ $category->image_url }}" alt="{{ $category->name }}">
                 </a>
             @empty

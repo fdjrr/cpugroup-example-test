@@ -4,6 +4,7 @@ namespace App\Livewire\Dashboard\Post;
 
 use App\Livewire\Forms\Post\UpdatePostForm;
 use App\Models\Post;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -38,6 +39,11 @@ class Edit extends Component
     public function save()
     {
         $post = $this->form->update($this->post, $this->image);
+
+        Session::flash('flash', [
+            'type'    => 'success',
+            'message' => 'Post updated',
+        ]);
 
         return $this->redirectRoute('posts.edit', $post->id);
     }

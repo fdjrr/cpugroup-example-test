@@ -10,8 +10,10 @@ class Home extends Component
 {
     public function render()
     {
+        $posts = Post::query()->published()->take(4)->latest()->get();
+
         return view('livewire.home', [
-            'posts'      => Post::query()->take(3)->latest()->get(),
+            'posts'      => $posts,
             'categories' => Category::all(),
         ]);
     }

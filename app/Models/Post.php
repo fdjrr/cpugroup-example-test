@@ -28,6 +28,11 @@ class Post extends Model
         });
     }
 
+    public function scopePublished($query)
+    {
+        $query->where('is_published', 1);
+    }
+
     /**
      * Get the user that owns the Post
      *

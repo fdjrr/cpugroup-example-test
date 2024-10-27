@@ -1,5 +1,7 @@
 # Capella Patria Utama Example Test
 
+🔥 TALL Stack (Tailwind, AlpineJS, Laravel, Livewire)
+
 ## Installation
 
 ```bash

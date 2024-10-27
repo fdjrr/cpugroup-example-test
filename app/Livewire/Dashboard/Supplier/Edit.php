@@ -4,6 +4,7 @@ namespace App\Livewire\Dashboard\Supplier;
 
 use App\Livewire\Forms\Supplier\UpdateSupplierForm;
 use App\Models\Supplier;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -21,9 +22,14 @@ class Edit extends Component
 
     public function save()
     {
-        $this->form->update($this->supplier);
+        $supplier = $this->form->update($this->supplier);
 
-        return $this->redirectRoute('suppliers.edit', $this->supplier->id);
+        Session::flash('flash', [
+            'type'    => 'success',
+            'message' => 'Supplier updated',
+        ]);
+
+        return $this->redirectRoute('suppliers.edit', $supplier->id);
     }
 
     public function render()

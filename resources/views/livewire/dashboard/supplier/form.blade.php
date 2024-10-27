@@ -1,5 +1,8 @@
 <div class="mt-14">
     <h1 class="mb-3 text-2xl font-bold">{{ $page_meta['title'] }}</h1>
+    @if (Session::has('flash'))
+        <x-alert class="mb-3" variant="{{ Session::get('flash')['type'] }}">{{ Session::get('flash')['message'] }}</x-alert>
+    @endif
     <div class="p-4 bg-white border rounded shadow">
         <form wire:submit.prevent="{{ $page_meta['form']['action'] }}">
             <div class="mb-3">

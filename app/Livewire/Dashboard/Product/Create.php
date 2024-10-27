@@ -6,6 +6,7 @@ use App\Livewire\Forms\Product\StoreProductForm;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Supplier;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -39,6 +40,11 @@ class Create extends Component
         ]);
 
         $product = $this->form->store($this->image);
+
+        Session::flash('flash', [
+            'type'    => 'success',
+            'message' => 'Product created',
+        ]);
 
         return $this->redirectRoute('products.edit', $product->id);
     }

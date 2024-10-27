@@ -6,6 +6,7 @@ use App\Livewire\Forms\Product\UpdateProductForm;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Supplier;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -39,9 +40,14 @@ class Edit extends Component
 
     public function save()
     {
-        $this->form->update($this->product, $this->image);
+        $product = $this->form->update($this->product, $this->image);
 
-        return $this->redirectRoute('products.edit', $this->product->id);
+        Session::flash('flash', [
+            'type'    => 'success',
+            'message' => 'Product updated',
+        ]);
+
+        return $this->redirectRoute('products.edit', $product->id);
     }
 
     public function render()

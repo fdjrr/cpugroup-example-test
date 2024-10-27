@@ -4,6 +4,7 @@ namespace App\Livewire\Dashboard\Category;
 
 use App\Livewire\Forms\Category\UpdateCategoryForm;
 use App\Models\Category;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -37,6 +38,11 @@ class Edit extends Component
     public function save()
     {
         $category = $this->form->update($this->category, $this->image);
+
+        Session::flash('flash', [
+            'type'    => 'success',
+            'message' => 'Category updated',
+        ]);
 
         return $this->redirectRoute('categories.edit', $category->id);
     }

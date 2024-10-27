@@ -7,6 +7,7 @@ use App\Models\Category;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Session;
 
 #[Layout('layouts.dashboard-layout')]
 class Create extends Component
@@ -36,6 +37,11 @@ class Create extends Component
         ]);
 
         $category = $this->form->store($this->image);
+
+        Session::flash('flash', [
+            'type'    => 'success',
+            'message' => 'Category created',
+        ]);
 
         return $this->redirectRoute('categories.edit', $category->id);
     }
