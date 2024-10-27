@@ -53,7 +53,7 @@ class Index extends Component
 
     public function render()
     {
-        $transactions = Transaction::query()->filter([
+        $transactions = Transaction::query()->with(['product'])->filter([
             'search' => $this->search,
         ])->orderByDesc('transaction_date')->orderByDesc('id')->paginate(10)->withQueryString();
 
