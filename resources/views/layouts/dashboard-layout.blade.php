@@ -11,6 +11,8 @@
     <link href="https://fonts.bunny.net" rel="preconnect">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+    <link type="image/x-icon" href="{{ asset('favicon.ico') }}" rel="shortcut icon">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
