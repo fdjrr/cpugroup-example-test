@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class GuestBook extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'guest_books';
     protected $guarded = ['id'];
 
