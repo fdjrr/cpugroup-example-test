@@ -12,7 +12,7 @@
                     </svg>
                 </button>
                 <a class="flex ms-2 md:me-24" href="{{ route('dashboard') }}" wire:navigate>
-                    <img class="h-8 me-3" src="{{ asset('assets/img/logo-gt-dark.png') }}" alt="FlowBite Logo" />
+                    <img class="h-8 me-3" src="{{ asset('assets/img/logo-gt-dark.png') }}" alt="{{ config('app.name') }}" />
                 </a>
             </div>
             <div class="flex items-center">

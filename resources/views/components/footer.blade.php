@@ -55,7 +55,8 @@
         </div>
         <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">© {{ Carbon::now()->format('Y') }} <a class="hover:underline" href="https://flowbite.com/">Capella Patria Utama</a>. Distributor Resmi Sparepart Mobil dan
+            <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">© {{ Carbon::now()->format('Y') }} <a class="hover:underline" href="{{ route('home') }}" wire:navigate>Capella Patria Utama</a>. Distributor Resmi Sparepart
+                Mobil dan
                 Sepeda Motor
             </span>
         </div>

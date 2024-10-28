@@ -4,6 +4,7 @@ namespace App\Livewire\Auth;
 
 use App\Livewire\Forms\Auth\LoginForm;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -21,7 +22,10 @@ class Login extends Component
 
             return $this->redirectRoute('dashboard');
         } else {
-            dd("failed");
+            return Session::flash('flash', [
+                'type'    => 'danger',
+                'message' => 'Invalid credentials',
+            ]);
         }
     }
 
