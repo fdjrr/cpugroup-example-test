@@ -21,8 +21,8 @@ class ProductDiscount extends Model
             $query->where(function($query) use ($search) {
                 $query->whereHas('product', function($query) use ($search) {
                     $query
-                        ->whereLike('name', '%'. $search .'%')
-                        ->orWhereLike('sku', '%'. $search .'%');
+                        ->whereLike('name', "%$search%")
+                        ->orWhereLike('sku', "%$search%");
                 });
             });
         });

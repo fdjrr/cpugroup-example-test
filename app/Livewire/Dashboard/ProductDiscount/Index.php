@@ -18,7 +18,7 @@ class Index extends Component
     public $search;
 
     public function updatingSearch() {
-        return $this->resetPage();
+        $this->resetPage();
     }
 
     public $id;
