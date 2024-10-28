@@ -14,23 +14,24 @@ class Create extends Component
 {
     public StoreProductDiscountForm $form;
 
-    public function save() {
+    public function save()
+    {
         $product_discount = ProductDiscount::query()->filter([
-            'expired_at' => $this->form->expired_at
+            'expired_at' => $this->form->expired_at,
         ])->first();
         if ($product_discount) {
             return Session::flash('flash', [
                 'type'    => 'danger',
-                'message' => 'Product category already exists.',
+                'message' => 'Product discount already exists.',
             ]);
         } else {
             $product_discount = $this->form->store();
-    
+
             Session::flash('flash', [
                 'type'    => 'success',
                 'message' => 'Product Discount created',
             ]);
-    
+
             return $this->redirectRoute('product_discounts.edit', $product_discount->id);
         }
     }
@@ -39,12 +40,12 @@ class Create extends Component
     {
         return view('livewire.dashboard.product-discount.form', [
             'page_meta' => [
-                'title' => 'Create Product Category',
-                'form' => [
-                    'action' => 'save'
-                ]
+                'title' => 'Create Product Discount',
+                'form'  => [
+                    'action' => 'save',
+                ],
             ],
-            'products' => Product::query()->orderBy('name')->get(),
+            'products'  => Product::query()->orderBy('name')->get(),
         ]);
     }
 }

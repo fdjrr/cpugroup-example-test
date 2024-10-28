@@ -16,27 +16,31 @@ class Edit extends Component
 
     public ProductDiscount $product_discount;
 
-    public function mount(ProductDiscount $product_discount) {
+    public function mount(ProductDiscount $product_discount)
+    {
         $this->product_discount = $product_discount;
         $this->form->fill($product_discount);
     }
 
-    public function save() {
-        if ($this->form->expired_at != $this->product_discount->expired_at && ProductDiscount::query()->filter([
-            'expired_at' => $this->form->expired_at
-        ])->exists()) {
+    public function save()
+    {
+        if (
+            $this->form->expired_at != $this->product_discount->expired_at && ProductDiscount::query()->filter([
+                'expired_at' => $this->form->expired_at,
+            ])->exists()
+        ) {
             return Session::flash('flash', [
                 'type'    => 'danger',
-                'message' => 'Product category already exists.',
+                'message' => 'Product discount already exists.',
             ]);
         } else {
             $product_discount = $this->form->update($this->product_discount);
-    
+
             Session::flash('flash', [
                 'type'    => 'success',
                 'message' => 'Product Discount updated',
             ]);
-    
+
             return $this->redirectRoute('product_discounts.edit', $product_discount->id);
         }
     }
@@ -50,7 +54,7 @@ class Edit extends Component
                     'action' => 'save',
                 ],
             ],
-            'products' => Product::query()->orderBy('name')->get(),
+            'products'  => Product::query()->orderBy('name')->get(),
         ]);
     }
 }
