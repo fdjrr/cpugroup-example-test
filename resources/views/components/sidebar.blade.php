@@ -94,6 +94,10 @@
                             wire:navigate>Product</a>
                     </li>
                     <li>
+                        <a class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" href="{{ route('product_discounts.index') }}"
+                            wire:navigate>Product Discount</a>
+                    </li>
+                    <li>
                         <a class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" href="{{ route('posts.index') }}" wire:navigate>Post</a>
                     </li>
                     <li>

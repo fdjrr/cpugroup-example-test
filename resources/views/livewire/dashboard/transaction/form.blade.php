@@ -42,7 +42,7 @@
                 <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="quantity"><span class="text-red-500 me-1">*</span>Jumlah Produk</label>
                 <input
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                    id="quantity" type="number" wire:model="form.quantity" placeholder="Jumlah Produk" />
+                    id="quantity" type="number" wire:model="form.quantity" placeholder="Jumlah Produk" wire:change="checkDiscount" />
                 @error('form.quantity')
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
                 @enderror
@@ -55,6 +55,13 @@
                 @error('form.price')
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
                 @enderror
+            </div>
+            <p class="mb-2">Discount : {{ $form->discount }}</p>
+            <div class="mb-3">
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="total_discount">Potongan</label>
+                <input
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    id="total_discount" type="number" wire:model="form.total_discount" placeholder="Potongan" disabled />
             </div>
             <div class="mb-3">
                 <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="description"><span class="text-red-500 me-1">*</span>Tipe Transaksi</label>

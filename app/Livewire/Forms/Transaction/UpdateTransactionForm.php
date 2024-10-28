@@ -21,10 +21,14 @@ class UpdateTransactionForm extends Form
     public $product_id;
 
     #[Validate('required|numeric', as: 'Jumlah Produk')]
-    public $quantity;
+    public $quantity = 0;
 
     #[Validate('required|numeric', as: 'Harga Produk')]
-    public $price;
+    public $price = 0;
+
+    public $discount = 0;
+    
+    public $total_discount = 0;
 
     #[Validate('required', as: 'Tipe Transaksi')]
     public $transaction_type;
@@ -77,6 +81,8 @@ class UpdateTransactionForm extends Form
                 'product_id'       => $this->product_id,
                 'quantity'         => $this->quantity,
                 'price'            => $this->price,
+                'discount'         => $this->discount, 
+                'total_discount'   => $this->total_discount,
                 'total'            => $this->price * $this->quantity,
                 'transaction_type' => $this->transaction_type,
                 'transaction_date' => Carbon::parse($this->transaction_date)->format('Y-m-d'),

@@ -40,6 +40,9 @@
                         Harga
                     </th>
                     <th class="px-6 py-3" scope="col">
+                        Potongan
+                    </th>
+                    <th class="px-6 py-3" scope="col">
                         Total
                     </th>
                     <th class="px-6 py-3" scope="col">
@@ -69,7 +72,10 @@
                             {{ $transaction->price }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $transaction->total }}
+                            {{ $transaction->total_discount }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $transaction->total - $transaction->total_discount }}
                         </td>
                         <td class="px-6 py-4">
                             @if ($transaction->transaction_type == 'In')

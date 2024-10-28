@@ -50,6 +50,10 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{product}/edit', \App\Livewire\Dashboard\Product\Edit::class)->name('products.edit');
         });
 
+        Route::prefix('product_discounts')->group(function () {
+            Route::get('', \App\Livewire\Dashboard\ProductDiscount\Index::class)->name('product_discounts.index');
+        });
+
         Route::prefix('branches')->group(function () {
             Route::get('', \App\Livewire\Dashboard\Branch\Index::class)->name('branches.index');
             Route::get('create', \App\Livewire\Dashboard\Branch\Create::class)->name('branches.create');
