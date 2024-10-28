@@ -14,7 +14,7 @@ class Home extends Component
 
         return view('livewire.home', [
             'posts'      => $posts,
-            'categories' => Category::all(),
+            'categories' => Category::query()->orderBy('name')->get(),
         ]);
     }
 }

@@ -74,7 +74,7 @@ class Create extends Component
                     'action' => 'save',
                 ],
             ],
-            'products'  => Product::all(),
+            'products'  => Product::query()->orderBy('name')->get(),
         ]);
     }
 }

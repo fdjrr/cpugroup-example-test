@@ -44,10 +44,10 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Social Media</h2>
                     <ul class="font-medium text-gray-500 dark:text-gray-400">
                         <li class="mb-4">
-                            <a class="hover:underline" href="#">Facebook</a>
+                            <a class="hover:underline" href="javascript:void(0)">Facebook</a>
                         </li>
                         <li>
-                            <a class="hover:underline" href="#">Instagram</a>
+                            <a class="hover:underline" href="javascript:void(0)">Instagram</a>
                         </li>
                     </ul>
                 </div>

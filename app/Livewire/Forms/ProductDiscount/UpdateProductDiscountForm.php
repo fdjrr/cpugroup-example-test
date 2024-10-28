@@ -6,7 +6,7 @@ use App\Models\ProductDiscount;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
-class StoreProductDiscountForm extends Form
+class UpdateProductDiscountForm extends Form
 {
     #[Validate('required|exists:products,id')]
     public $product_id;
@@ -17,10 +17,10 @@ class StoreProductDiscountForm extends Form
     #[Validate('required|date', as: 'Tanggal Expired')]
     public $expired_at;
 
-    public function store() {
+    public function update(ProductDiscount $product_discount) {
         $this->validate();
 
-        $product_discount = ProductDiscount::create([
+        $product_discount->update([
             'product_id' => $this->product_id,
             'discount' => $this->discount,
             'expired_at' => $this->expired_at,

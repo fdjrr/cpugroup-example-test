@@ -89,7 +89,7 @@
                                 <a class="font-medium text-blue-600 hover:underline dark:text-blue-500" href="{{ route('transactions.edit', $transaction->id) }}" wire:navigate>Detail</a>
                             @else
                                 <a class="font-medium text-blue-600 hover:underline dark:text-blue-500" href="{{ route('transactions.edit', $transaction->id) }}" wire:navigate>Edit</a>
-                                <a class="font-medium text-red-600 ms-3 hover:underline dark:text-red-500" href="#" wire:click="delete({{ $transaction->id }})">Remove</a>
+                                <a class="font-medium text-red-600 ms-3 hover:underline dark:text-red-500" href="javascript:void(0)" wire:click="delete({{ $transaction->id }})">Remove</a>
                             @endif
                         </td>
                     </tr>

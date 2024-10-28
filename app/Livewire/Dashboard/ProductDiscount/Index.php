@@ -3,6 +3,7 @@
 namespace App\Livewire\Dashboard\ProductDiscount;
 
 use App\Models\ProductDiscount;
+use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -18,6 +19,35 @@ class Index extends Component
 
     public function updatingSearch() {
         return $this->resetPage();
+    }
+
+    public $id;
+
+    public function delete($id)
+    {
+        $this->id = $id;
+
+        return $this->dispatch('openDeleteModal');
+    }
+
+    public function confirmDelete()
+    {
+        $product_discount = ProductDiscount::find($this->id);
+        if ($product_discount) {
+            $product_discount->delete();
+
+            Session::flash('flash', [
+                'type'    => 'success',
+                'message' => 'Product Discount deleted',
+            ]);
+
+            return $this->dispatch('closeDeleteModal');
+        } else {
+            return Session::flash('flash', [
+                'type'    => 'danger',
+                'message' => 'Product Discount not found.',
+            ]);
+        }
     }
 
     public function render()
