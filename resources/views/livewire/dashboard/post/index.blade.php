@@ -60,7 +60,9 @@
                         </td>
                     </tr>
                 @empty
-                    <td class="w-full py-4 text-sm text-center text-gray-400 dark:text-gray-500" colspan="100%">Data not found</td>
+                    <tr class="odd:bg-white even:bg-gray-50 dark:border-gray-700 odd:dark:bg-gray-900 even:dark:bg-gray-800">
+                        <td class="w-full py-4 text-sm text-center text-gray-400 dark:text-gray-500" colspan="100%">Data not found</td>
+                    </tr>
                 @endforelse
             </tbody>
         </table>
